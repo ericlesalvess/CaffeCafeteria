@@ -4,9 +4,16 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { FiX } from 'react-icons/fi';
 
-// --- DADOS DAS FOTOS ---
+// --- DADOS E TIPAGEM DAS FOTOS ---
 
-const photos = [
+// 1. Definindo a "forma" de um objeto de foto para o TypeScript
+interface Photo {
+  id: number;
+  src: string;
+  caption: string;
+}
+
+const photos: Photo[] = [
   { id: 1, src: '/fotos1.jpg', caption: 'Nosso cantinho aconchegante.' },
   { id: 2, src: '/fotos7.jpg', caption: 'Café da manhã especial.' },
   { id: 3, src: '/fotos15.jpg', caption: 'Detalhes que fazem a diferença.' },
@@ -21,9 +28,11 @@ const photos = [
 
 // --- O COMPONENTE DA PÁGINA ---
 export default function FotosPage() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  // 2. Tipando o estado: pode ser um objeto Photo ou null
+  const [selectedImage, setSelectedImage] = useState<Photo | null>(null);
 
-  const openModal = (photo) => {
+  // 3. Tipando o parâmetro da função: 'photo' é do tipo 'Photo'
+  const openModal = (photo: Photo) => {
     setSelectedImage(photo);
   };
 
