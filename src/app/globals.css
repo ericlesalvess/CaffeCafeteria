@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+.bg-banner{
+     background-image: url('/b1.png');
+     background-size: cover;
+     background-position: center;
+     background-color: #111827;
+     margin-bottom: 0;
+     }
+
+.bg-cafediferenciado{
+     background-image: url('/05.png');
+     background-size: cover;
+     background-position: center;
+     background-color: #111827;
+     margin-bottom: 0;
+}
+
+/* 
+
+.bg-bannersobre{
+     background-image: url('/sobre.png');
+     background-size: cover;
+     background-position: center;
+     background-color: #111827;
+     margin-bottom: 0;
+}
+
+Adicione este novo estilo ao final do seu arquivo */
+
+.bg-bannersobre {
+  position: relative; /* Necessário para posicionar a sobreposição */
+  background-image: url('/sobre.png'); /* 👈 Coloque o caminho correto da sua imagem aqui */
+  background-size: cover;     /* Garante que a imagem inteira apareça */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-position: center;  /* Centraliza a imagem no container */
+}
+
+/* Esta é a sobreposição escura para melhorar a leitura */
+.bg-bannersobre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Cor preta com 40% de opacidade */
+  z-index: 1; /* Fica acima da imagem de fundo */
+}
+
+.bg-bannerencontrar {
+  position: relative; /* Necessário para a sobreposição */
+  background-image: url('/encontrar1.png'); /* Caminho da sua imagem */
+  
+  /* --- ALTERAÇÕES PRINCIPAIS AQUI --- */
+  background-size: cover;   /* Garante que a imagem inteira apareça, sem cortes */
+  background-repeat: no-repeat; /* Evita que a imagem se repita para preencher o espaço */
+  background-position: center;  /* Centraliza a imagem no container */
+  
+  margin-bottom: 0;
+}
+
+/* Sobreposição escura para melhorar a leitura do texto sobre o banner */
+.bg-bannerencontrar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Cor preta com 40% de opacidade. Ajuste se precisar. */
+  background-color: rgba(0, 0, 0, 0.4); 
+  /* Fica acima da imagem de fundo, mas abaixo do conteúdo de texto */
+  z-index: 1; 
+}
+
+.whatsappButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  animation: bounce 1.2s infinite;
+  display: inline-block;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
