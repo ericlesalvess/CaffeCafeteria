@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-900 text-neutral-300 flex justify-center items-center w-full">
       <div className=" w-full h-full  max-w-6xl mx-auto py-12 px-6 lg:px-8">
-        <div className="ml-50 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
           {/* Coluna 1: Logo e Slogan */}
           <div className="mb-6 md:mb-0">
             <span className="text-amber-50 text-2xl">Caffé</span>
@@ -25,17 +25,17 @@ export default function Footer() {
           </div>
 
           {/* Coluna 4: Newsletter */}
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h3 className="text-sm font-semibold tracking-wider text-neutral-400 uppercase">Receba novidades</h3>
-            <form className="mt-4 flex flex-col sm:flex-row">
+            <form className="mt-4 flex flex-col items-center sm:flex-row sm:items-stretch">
               <input
                 type="email"
                 placeholder="Seu e-mail"
-                className="w-30 px-4 py-2 rounded-md bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
+                className="w-full sm:w-auto px-4 py-2 rounded-md bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:ring-2 focus:ring-amber-600"
               />
               <button
                 type="submit"
-                className=" w-30 mt-2 sm:mt-0 sm:ml-2 px-4 py-2 rounded-md bg-amber-700 text-white font-semibold hover:bg-amber-600 transition-colors"
+                className=" w-full sm:w-auto mt-2 sm:mt-0 sm:ml-2 px-4 py-2 rounded-md bg-amber-700 text-white font-semibold hover:bg-amber-600 transition-colors"
               >
                 Inscrever
               </button>
@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
 
         {/* Seção inferior: Copyright e Redes Sociais */}
-        <div className="mt-5 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row justify-between items-center">
+        <div className="mt-5 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
           <p className="text-sm text-neutral-500">&copy; {new Date().getFullYear()} Caffè Cafeteria. Todos os direitos reservados.</p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
             <a href="#" className="text-neutral-400 hover:text-white"><FaInstagram size={20} /></a>
